@@ -165,7 +165,7 @@ public class Test {
 
     public Optional<Artist> biggestGroup(Stream<Artist> artists) {
         Function<Artist, Long> getCount = artist -> artist.getMembers().count();
-        return artists.collect(Collectors.maxBy(Comparator.comparing(getCount)));
+        return artists.max(Comparator.comparing(getCount));
     }
 
     public double averageNumberOfTracks(List<Album> albums) {
